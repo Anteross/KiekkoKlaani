@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://PlayButton.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/fonts/BACKTO1982.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/fonts/BACKTO1982.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/PlayButton.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
@@ -50,7 +50,7 @@ margin_right = 649.382
 margin_bottom = 272.583
 custom_fonts/font = SubResource( 2 )
 text = "Play"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

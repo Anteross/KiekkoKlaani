@@ -1,49 +1,62 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Tiles/DirtTileSet.png" type="Texture" id=3]
 [ext_resource path="res://passThrough.tres" type="TileSet" id=4]
 [ext_resource path="res://Sprites/Backgrounds/set2_background.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Backgrounds/set2_tiles.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Sprites/Hud/coin_gold.png" type="Texture" id=8]
-[ext_resource path="res://HUD.gd" type="Script" id=9]
-[ext_resource path="res://SlimeEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/SlimeEnemy.tscn" type="PackedScene" id=10]
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.00784314, 0.00784314, 0.00784314, 0.160784 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 7 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.145098, 0.137255, 0.137255, 0.486275 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 78.1882, 10.3656 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 45.3915, 15.1267 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=12]
 
-[sub_resource type="TileSet" id=7]
+[sub_resource type="TileSet" id=13]
 0/name = "0_64"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
@@ -54,20 +67,20 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 16.0579, 46 )
 0/shape_transform = Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
-0/shape = SubResource( 2 )
+0/shape = SubResource( 8 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -81,20 +94,20 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 16.0579, 46 )
 1/shape_transform = Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
-1/shape = SubResource( 2 )
+1/shape = SubResource( 8 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 10 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -108,20 +121,20 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 16.0579, 46 )
 2/shape_transform = Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
-2/shape = SubResource( 2 )
+2/shape = SubResource( 8 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 11 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -135,14 +148,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 16.0579, 46 )
 3/shape_transform = Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
-3/shape = SubResource( 2 )
+3/shape = SubResource( 8 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
 } ]
 3/z_index = 0
@@ -156,14 +169,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 16.0579, 46 )
 4/shape_transform = Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
-4/shape = SubResource( 2 )
+4/shape = SubResource( 8 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
 } ]
 4/z_index = 0
@@ -177,14 +190,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 16.0579, 46 )
 5/shape_transform = Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
-5/shape = SubResource( 2 )
+5/shape = SubResource( 8 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 0.35, 0, 0, 1.2, 16.0579, 46 )
 } ]
 5/z_index = 0
@@ -198,14 +211,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 6/navigation_offset = Vector2( 16, 16 )
 6/shape_offset = Vector2( 16, 16 )
 6/shape_transform = Transform2D( 1.6, 0, 0, 1.6, 16, 16 )
-6/shape = SubResource( 6 )
+6/shape = SubResource( 12 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1.6, 0, 0, 1.6, 16, 16 )
 } ]
 6/z_index = 0
@@ -219,14 +232,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 7/navigation_offset = Vector2( 16, 16 )
 7/shape_offset = Vector2( 16, 16 )
 7/shape_transform = Transform2D( 1.6, 0, 0, 1.6, 16, 16 )
-7/shape = SubResource( 6 )
+7/shape = SubResource( 12 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1.6, 0, 0, 1.6, 16, 16 )
 } ]
 7/z_index = 0
@@ -240,49 +253,49 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 8/navigation_offset = Vector2( 16, 16 )
 8/shape_offset = Vector2( 16, 16 )
 8/shape_transform = Transform2D( 1.6, 0, 0, 1.6, 16, 16 )
-8/shape = SubResource( 6 )
+8/shape = SubResource( 12 )
 8/shape_one_way = false
 8/shape_one_way_margin = 1.0
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1.6, 0, 0, 1.6, 16, 16 )
 } ]
 8/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=14]
 
 [node name="World" type="Node2D"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
 
-[node name="Panel" type="Panel" parent="HUD"]
+[node name="CanPanel" type="Panel" parent="HUD"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 142.0
 margin_bottom = 50.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="X" type="Label" parent="HUD/Panel"]
+[node name="X" type="Label" parent="HUD/CanPanel"]
 margin_left = 3.0
 margin_top = 6.99774
 margin_right = 56.0
 margin_bottom = 30.9977
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.92549, 0.952941, 0.0392157, 1 )
 text = "Coins:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Panel"]
+[node name="TextureRect" type="TextureRect" parent="HUD/CanPanel"]
 margin_left = 85.8213
 margin_right = 125.821
 margin_bottom = 40.0
@@ -292,12 +305,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Coinslabel" type="Label" parent="HUD/Panel"]
+[node name="Coinslabel" type="Label" parent="HUD/CanPanel"]
 margin_left = 59.0
 margin_top = 6.99774
 margin_right = 78.0
 margin_bottom = 30.9977
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthPanel" type="Panel" parent="HUD"]
+margin_left = 160.0
+margin_top = 10.0
+margin_right = 260.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="Label" parent="HUD/HealthPanel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.0588235, 0.0588235, 1 )
+text = "Health:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="HUD/HealthPanel"]
+margin_left = 65.0
+margin_top = 10.0
+margin_right = 105.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "XX"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -316,18 +363,18 @@ collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TilesOneWay/StaticBody2D"]
 position = Vector2( 305.059, 9.75705 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 one_way_collision = true
 one_way_collision_margin = 0.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TilesOneWay/StaticBody2D"]
 position = Vector2( 305.059, 106.199 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 one_way_collision = true
 one_way_collision_margin = 0.0
 
 [node name="TilesSolid" type="TileMap" parent="."]
-tile_set = SubResource( 7 )
+tile_set = SubResource( 13 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 2
 collision_mask = 17
@@ -386,7 +433,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
-shape = SubResource( 8 )
+shape = SubResource( 14 )
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -435,4 +482,5 @@ limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_FallZone_body_entered"]
+[connection signal="health_left" from="Player" to="HUD" method="_on_Player_health_left"]
 [connection signal="item_collected" from="Player" to="HUD" method="_on_Player_item_collected"]

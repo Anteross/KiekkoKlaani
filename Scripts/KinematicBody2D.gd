@@ -1,23 +1,28 @@
 extends KinematicBody2D
 
 signal item_collected(item_type)
+signal health_left(health_left)
 
 const MAX_SPEED = 300
 const SLIDE_SPEED = 500
 const JUMP_HEIGHT = -350
-const ACCELERATION = 50
-const GRAVITY = 10
+const ACCELERATION = 25
 const FRICTION = 0.05
 const AIR_FRICTION = 0.2
 const DAMAGE_STAGGER = 150
 const UP = Vector2(0,-1)
 
-var health = 5
+var gravity = 10
+var max_health = 5
+var current_health = 5
 var coins = 0
 var motion = Vector2()
 
+func _ready():
+	emit_signal("health_left", current_health)
+
 func _physics_process(delta):
-	motion.y += GRAVITY;
+	motion.y += gravity
 	var friction = false
 	
 	if Input.is_action_pressed("ui_right"):
@@ -34,6 +39,15 @@ func _physics_process(delta):
 	elif is_on_floor():
 		friction = true
 		play_animation("Idle")
+	
+	if is_on_wall():
+		gravity = 2
+		if Input.is_action_pressed("ui_up"):
+			Input.action_release("ui_left")
+			motion.y = JUMP_HEIGHT
+			motion.x = 200
+	else:
+		gravity = 10
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
@@ -58,14 +72,18 @@ func move(var speed, var flip):
 	if is_on_floor():
 		play_animation("Run")
 
-func take_damage(var damagePosX):
-	set_modulate(Color(1,0.3,0.3,0.3))
+func take_damage(var damagePosX, var amount):
+	set_modulate(Color(1,0.3,0.3,1))
 	motion.y = JUMP_HEIGHT * 0.4
+	
+	current_health -= amount
+	emit_signal("health_left", current_health)
 	
 	if position.x < damagePosX:
 		motion.x = -DAMAGE_STAGGER
-	else:
+	elif position.x > damagePosX:
 		motion.x = DAMAGE_STAGGER
+	
 	$StaggerTimer.start()
 	Input.action_release("ui_left")
 	Input.action_release("ui_right")
@@ -83,4 +101,5 @@ func _on_FallZone_body_entered(body):
 	get_tree().change_scene("res://TitleMenu.tscn")
 
 func _on_StaggerTimer_timeout():
-	get_tree().change_scene("res://TitleMenu.tscn")
+	set_modulate(Color(1,1,1,1))
+
