@@ -98,7 +98,7 @@ func play_animation(var animation):
 	$Sprite.play(animation)
 
 func _on_FallZone_body_entered(body):
-	get_tree().change_scene("res://TitleMenu.tscn")
+	get_tree().change_scene("res://Scenes/TitleMenu.tscn")
 
 func _on_StaggerTimer_timeout():
 	set_modulate(Color(1,1,1,1))
