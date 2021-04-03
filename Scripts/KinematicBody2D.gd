@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal item_collected(item_type)
 signal health_left(health_left)
+signal use_pressed
 
 const MAX_SPEED = 300
 const SLIDE_SPEED = 500
@@ -25,6 +26,9 @@ func _physics_process(delta):
 	motion.y += gravity
 	var friction = false
 	
+	if Input.is_action_just_pressed("ui_use"):
+		emit_signal("use_pressed")
+	
 	if Input.is_action_pressed("ui_right"):
 		move(ACCELERATION, false)
 	elif Input.is_action_pressed("ui_left"):
@@ -41,13 +45,10 @@ func _physics_process(delta):
 		play_animation("Idle")
 	
 	if is_on_wall():
-		gravity = 2
 		if Input.is_action_pressed("ui_up"):
 			Input.action_release("ui_left")
 			motion.y = JUMP_HEIGHT
 			motion.x = 200
-	else:
-		gravity = 10
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
